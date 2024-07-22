@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{ object.model }} ({{ object.brand }})</h1>
+<p>Price: ${{ object.price }}</p>
+<p>Bought: {{ object.is_bought }}</p>
+<p>Buyer: {{ object.buyer }}</p>
+<p>Buy Time: {{ object.buy_time }}</p>
+<nav>
+  <a href="{% url 'car-update' object.pk %}">Update</a>
+  <a href="{% url 'car-delete' object.pk %}">Delete</a>
+</nav>
+{% endblock %}
